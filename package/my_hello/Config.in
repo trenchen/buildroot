@@ -1,0 +1,7 @@
+config BR2_PACKAGE_MY_HELLO
+	bool "my_hello"
+	help
+	  a test package
+	  
+	  http://www.test.com
+	  
