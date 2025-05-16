@@ -2,13 +2,12 @@
 #include <stdlib.h>     // malloc, free
 #include <unistd.h>     // usleep
 #include "lvgl.h"
-#include "my_drm.h"
 
 
 static void btn_event_cb(lv_event_t * e)
 {
     lv_obj_t * label = lv_obj_get_child(lv_event_get_target(e), 0);
-    lv_label_set_text(label, "按下了！");
+    lv_label_set_text(label, "helloworld");
 }
 
 int main(void)
@@ -26,6 +25,14 @@ int main(void)
 	
 	lv_display_t * display = lv_linux_drm_create();
 	lv_linux_drm_set_file(display, "/dev/dri/card0", -1 /* use first connector */);
+	
+	lv_indev_t *touch = lv_evdev_create(LV_INDEV_TYPE_POINTER, "/dev/input/event2");
+	lv_indev_set_display(touch, display);
+	
+	//LV_IMAGE_DECLARE(mouse_cursor_icon);                          /* Declare the image source. */
+	lv_obj_t * cursor_obj = lv_image_create(lv_screen_active());  /* Create image Widget for cursor. */
+	lv_image_set_src(cursor_obj, LV_SYMBOL_POWER);             /* Set image source. */
+	lv_indev_set_cursor(touch, cursor_obj);                 /* Connect image to Input Device. */
 	
 	 // 建立按鈕與標籤
     lv_obj_t * btn = lv_button_create(lv_screen_active());
