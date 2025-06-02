@@ -152,6 +152,15 @@ lv_obj_t * lv_ffmpeg_player_create(lv_obj_t * parent)
     return obj;
 }
 
+lv_result_t lv_ffmpeg_player_set_video_device(void)
+{
+	 lv_result_t res = LV_RESULT_OK;
+	 
+	 avdevice_register_all();
+	 
+	 return res;
+}
+
 lv_result_t lv_ffmpeg_player_set_src(lv_obj_t * obj, const char * path)
 {
     LV_ASSERT_OBJ(obj, MY_CLASS);
