@@ -10,7 +10,7 @@ endef
 
 
 define MY_HELLO_INSTALL_TARGET_CMDS
-	$(INSTALL) -D -m 0755 $(@D)/test_lvgl $(TARGET_DIR)/usr/sbin
+#	$(INSTALL) -D -m 0755 $(@D)/test_lvgl $(TARGET_DIR)/usr/sbin
 #	$(INSTALL) -D -m 0755 $(@D)/drm_test $(TARGET_DIR)/usr/sbin
 #	$(INSTALL) -D -m 0755 $(@D)/drm_test2 $(TARGET_DIR)/usr/sbin
 endef
