@@ -4,7 +4,7 @@ LVGL_DIR_NAME ?= lvgl
 LVGL_DIR ?= ${shell pwd}
 
 
-CSRCS = my_hello.c
+#CSRCS = my_hello.c
 
 include $(LVGL_DIR)/$(LVGL_DIR_NAME)/lvgl.mk
 
@@ -12,8 +12,8 @@ OBJEXT          ?= .o
 COBJS           = $(CSRCS:.c=$(OBJEXT))
 CXXOBJS         = $(CXXSRCS:.cpp=$(OBJEXT))
 
-all: test_lvgl
-#all: opencv_test
+#all: test_lvgl
+all: opencv_test
 
 %.o: %.c lv_conf.h
 	$(CC) $(CFLAGS) -I./ -I$(LVGL_DIR)/$(LVGL_DIR_NAME) `pkg-config --cflags libdrm` -o $@ -c $<
