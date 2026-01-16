@@ -21,12 +21,12 @@ GST1_RTSP_SERVER_DEPENDENCIES = \
 GST1_RTSP_SERVER_LDFLAGS = $(TARGET_LDFLAGS) $(TARGET_NLS_LIBS)
 
 GST1_RTSP_SERVER_CONF_OPTS = \
-	-Dexamples=disabled \
+	-Dexamples=enabled \
 	-Dtests=disabled \
 	-Ddoc=disabled
 
 GST1_RTSP_SERVER_CONF_OPTS += \
-	-Dexamples=disabled \
+	-Dexamples=enabled \
 	-Dtests=disabled \
 	-Dgobject-cast-checks=disabled \
 	-Dglib-asserts=disabled \
